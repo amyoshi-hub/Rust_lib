@@ -12,7 +12,7 @@ dependencies = [
 ]
 
 [[package]]
-name = "fileio_handl"
+name = "fileio_handle"
 version = "0.1.0"
 dependencies = [
  "regex",
