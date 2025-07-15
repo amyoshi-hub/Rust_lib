@@ -30,6 +30,15 @@ fn main() -> Result<(), Box<dyn std::error::Error>>{
 }
       
 ```
+## main feature
+- read(); inqueue and print line method
+- read_lines()?; inqueue line data to contents
+- print_lines(); print content
+
+## struct
+FileIO
+- filename: &str
+- contents: Vec<&str>
 
 # planning features
 - better error handling
