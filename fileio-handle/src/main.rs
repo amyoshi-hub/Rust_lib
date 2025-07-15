@@ -1,4 +1,4 @@
-use fileio_handl::FileIO;
+use fileio_handle::FileIO;
 
 fn main() -> Result<(), Box<dyn std::error::Error>>{
     let mut file = FileIO::new("word_list.txt");
