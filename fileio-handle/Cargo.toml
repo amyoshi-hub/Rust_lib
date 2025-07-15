@@ -1,0 +1,11 @@
+[package]
+name = "fileio_handle"
+version = "0.1.0"
+authors = ["amyoshi narinarit59@gmail.com"]
+edition = "2024"
+description = "Simple \"easy\" file handler"
+license = "MIT"
+repository = "https://github.com/amyoshi-hub/Rust_lib/tree/main/fileio-handle"
+
+[dependencies]
+regex = "1.11.1"
