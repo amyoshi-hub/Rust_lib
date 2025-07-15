@@ -15,7 +15,7 @@ impl FileIO {
         }
     }
 
-    fn read_lines(&mut self) -> io::Result<()>{
+    pub fn read_lines(&mut self) -> io::Result<()>{
         let file = File::open(&self.filename)?;
         let reader = BufReader::new(file);
         self.contents = reader
@@ -50,27 +50,4 @@ impl FileIO {
         }
         Ok(())
     }
-}
-
-fn main() -> Result<(), Box<dyn std::error::Error>>{
-    let mut file = FileIO::new("word_list.txt");
-    file.read_lines()?;
-    
-    let sep_list = [":", "|"];
-    let mut result = Vec::new();
-
-    for line in &file.contents {
-        let split = FileIO::phaser(line, &sep_list);
-        let filtered: Vec<_> = split
-            .iter()
-            .filter(|s| s.trim().parse::<f32>().is_ok())
-            .cloned()
-            .collect();
-        let joined = filtered.join(", ");
-        result.push(joined);
-    }
-
-    FileIO::write_file("out.txt", &result)?;
-    
-    Ok(())
 }
